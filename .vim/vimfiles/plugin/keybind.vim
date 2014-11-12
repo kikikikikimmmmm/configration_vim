@@ -8,6 +8,11 @@ nnoremap <Leader>w  :set wrap!<CR>
 nnoremap <Space>.  :<C-u>edit $MYVIMRC<CR>
 " 連続貼り付け
 vnoremap <silent> <C-p> "0p<CR>
+" window control とりあえず
+nmap <C-k>	<C-W>+
+nmap <C-j>	<C-W>-
+nmap <C-l>	<C-W>>
+nmap <C-h>	<C-W><
 " バッファ移動
 nmap <C-n>	:bp<CR>
 nmap <C-p>	:bn<CR>
@@ -15,10 +20,10 @@ nmap <C-p>	:bn<CR>
 nmap <C-t>	gt
 nmap <S-t>	gT
 " 挿入時も移動
-imap <c-h> <Left>
-imap <c-j> <Down>
-imap <c-k> <Up>
-imap <c-l> <Right>
+imap <C-h> <Left>
+imap <C-j> <Down>
+imap <C-k> <Up>
+imap <C-l> <Right>
 " バッファの新規作成
 nmap <C-w>v	:vnew<CR>
 nmap <C-w>s	<C-w>n<CR>
@@ -36,3 +41,13 @@ nmap <C-F7>	:call SvnDiff_ShowDiff(1)<CR>
 
 " svn annotate
 nmap <F9>	:call SvnAnnotate_ShowResult(expand("%"))<CR>
+
+" sub mode
+"	call submode#enter_win('winsize', 'n', '<C-l>', '<C-w>>')
+"	call submode#enter_win('winsize', 'n', '<C-h>', '<C-w><')
+"	call submode#enter_win('winsize', 'n', '<C-k>', '<C-w>-')
+"	call submode#enter_win('winsize', 'n', '<C-j>', '<C-w>+')
+"	call submode#map('winsize', 'n', '<C-l>', '<C-w>>')
+"	call submode#map('winsize', 'n', '<C-h>', '<C-w><')
+"	call submode#map('winsize', 'n', '<C-k>', '<C-w>-')
+"	call submode#map('winsize', 'n', '<C-j>', '<C-w>+')
