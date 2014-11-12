@@ -178,6 +178,7 @@ function! s:LoadBundles()
 	NeoBundle 'jlanzarotta/bufexplorer'
 	NeoBundle 'kana/vim-submode'
 	NeoBundle 'vim-scripts/vcscommand.vim'
+	NeoBundle 'tomasr/molokai'
 	" ...
 	" “Ç‚İ‚ñ‚¾ƒvƒ‰ƒOƒCƒ“‚Ìİ’è
 	" ...
