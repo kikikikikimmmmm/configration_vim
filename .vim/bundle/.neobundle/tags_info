@@ -1,5 +1,6 @@
 bufexplorer
 molokai
 neobundle.vim
+taglist.vim
 vcscommand.vim
 vim-submode

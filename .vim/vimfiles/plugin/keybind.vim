@@ -17,8 +17,8 @@ nmap <C-h>	<C-W><
 nmap <C-n>	:bp<CR>
 nmap <C-p>	:bn<CR>
 " タブ移動
-nmap <C-t>	gt
-nmap <S-t>	gT
+nmap <C-PageDown>	gt
+nmap <C-PageUp>		gT
 " 挿入時も移動
 imap <C-h> <Left>
 imap <C-j> <Down>
@@ -29,6 +29,7 @@ nmap <C-w>v	:vnew<CR>
 nmap <C-w>s	<C-w>n<CR>
 " diffのショートカット
 nmap <F5>	:difft<CR><C-w>w:difft<CR><C-w>w
+nmap <Leader>tl	:Tlist<CR>
 
 " Cデバッグ用
 nmap #p oprintf("%s %d\n", __FILE__, __LINE__);
