@@ -19,6 +19,8 @@ set smartcase
 " オートインデント、改行、インサートモード開始直後にバックスペースキーで
 " 削除できるようにする。
 set backspace=indent,eol,start
+set fileformats=unix,dos
+set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 " オートインデント
 set autoindent
 " 移動コマンドを使ったとき、行頭に移動しない

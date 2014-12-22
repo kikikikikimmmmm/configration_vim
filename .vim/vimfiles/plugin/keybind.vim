@@ -1,50 +1,70 @@
 " Yの動作をDやCと同じにする
-noremap Y y$
+map Y y$
+" 1文字消去はヤンクしない
+nnoremap x "_x
 " 検索後の強調表示を解除する
-nnoremap <Esc><Esc>		:nohl<CR><Esc>
+nmap <Esc><Esc>		:nohl<CR><Esc>
 " 行を折り返し表示しない
-nnoremap <Leader>w		:set wrap!<CR>
+nmap <Leader>w		:set wrap!<CR>
 " .vimrcを開く
-nnoremap <Space>.		:<C-u>edit $MYVIMRC<CR>
+nmap <Space>.		:<C-u>edit $MYVIMRC<CR>
 " 連続貼り付け
-vnoremap <silent>		<C-p> "0p<CR>
+vmap <silent>		<C-p> "0p<CR>
+
+" 日時挿入
+nmap date			<ESC>a<C-R>=strftime("%Y.%m.%d")<CR><ESC>
+nmap time			<ESC>a<C-R>=strftime("%H.%M.%S")<CR><ESC>
+nmap gv				:vertical wincmd f<CR>
+
 " window control とりあえず
-nnoremap <C-k>			<C-W>+
-nnoremap <C-j>			<C-W>-
-nnoremap <C-l>			<C-W>>
-nnoremap <C-h>			<C-W><
+nmap <C-k>			<C-W>+
+nmap <C-j>			<C-W>-
+nmap <C-l>			<C-W>>
+nmap <C-h>			<C-W><
 " バッファ移動
-nnoremap <C-n>			:bp<CR>
-nnoremap <C-p>			:bn<CR>
+nmap <C-n>			:bp<CR>
+nmap <C-p>			:bn<CR>
 " タブ移動
-nnoremap <C-PageDown>	gt
-nnoremap <C-PageUp>		gT
+nmap <C-PageDown>	gt
+nmap <C-PageUp>		gT
 " 挿入時も移動
-inoremap <C-h>			<Left>
-inoremap <C-j>			<Down>
-inoremap <C-k>			<Up>
-inoremap <C-l>			<Right>
+imap <C-h>			<Left>
+imap <C-j>			<Down>
+imap <C-k>			<Up>
+imap <C-l>			<Right>
+
 " バッファの新規作成
-nnoremap <C-w><C-v>		:vnew<CR>
-" nnoremap <C-w>s	<C-w>n<CR>
-" diffのショートカット
-nnoremap <F5>			:difft<CR><C-w>w:difft<CR><C-w>w
-nnoremap <Leader>tl		:Tlist<CR>
+nmap <C-w>v			:vnew<CR>
+nmap <C-w>s			<C-w>n<CR>
+
+" source tree
+nmap <Leader>tl		:Tlist<CR>
+nmap <C-C>			:cd %:h<CR>:pwd<CR>
+nmap <S-C>			:cd ..<CR>:pwd<CR>
 
 " Cデバッグ用
-nnoremap #p				oprintf("%s %d\n", __FILE__, __LINE__);
-nnoremap #d				:.s/\/\*//:.s/\*\///
+nmap #p				oprintf("%s %d\n", __FILE__, __LINE__);
+nmap #d				:.s/\/\*//:.s/\*\///
 
+" 記載されているファイルを開く
+nmap <F2>			:<C-u>hide edit %<.h<CR>
+" diffのショートカット
+nmap <F5>			:difft<CR><C-w>w:difft<CR><C-w>w
+nmap <C-F5>			:diffo<CR><C-w>w:diffo<CR><C-w>w
+nmap <S-F5>			:bd!<CR>:bd!<CR>
 " cvs/svn diff
-nnoremap <F6>			:call SvnDiff_ShowList()<CR>
-nnoremap <F7>			:call SvnDiff_ShowDiff(0)<CR>
-nnoremap <C-F7>			:call SvnDiff_ShowDiff(1)<CR>
+nmap <F6>			:call SvnDiff_ShowList()<CR>
+nmap <F7>			:call SvnDiff_ShowDiff(0)<CR>
+nmap <C-F7>			:call SvnDiff_ShowDiff(1)<CR>
+nmap <S-F7>			:call SvnDiff_ShowDiff(2)<CR>
+" get revision(描画がおかしくなるため再描画する)
+nmap <Leader>rev	:let rev=SvnDiff_GetRevision()<CR>:redraw!<CR>:echo rev<CR>
 
 " svn annotate
-nnoremap <F9>			:call SvnAnnotate_ShowResult(expand("%"))<CR>
-
-nnoremap <C-C>			:cd %:h<CR>:pwd<CR>
-nnoremap <S-C>			:cd ..<CR>:pwd<CR>
+nmap <F9>			:call SvnAnnotate_ShowResult(expand("%"))<CR>
+nmap <F10>			:call SvnLog_ShowResult(expand("%"))<CR>
+" start up explorer
+nmap <F12>			:silent ! explorer.exe `cygpath -wa %:h`<CR>
 
 " sub mode
 "	call submode#enter_win('winsize', 'n', '<C-l>', '<C-w>>')

@@ -13,6 +13,7 @@ endfunction
 let s:patch_base=expand("~/.vim")
 let s:patch_list=s:patch_base . "/patch_list.tmp"
 let s:patch=s:patch_base . "/patch.tmp"
+let s:revision=s:patch_base . "/revision.tmp"
 
 function! SvnDiff_MakeList(patch_file)
     silent execute
@@ -23,6 +24,29 @@ endfunction
 function! SvnDiff_MakePatch(patch_target, patch_file_name)
     silent execute 
         \ '!svn diff ' .  a:patch_target .  ' > ' .  a:patch_file_name
+endfunction
+
+function! SvnDiff_GetRevision()
+	silent execute '!LC_ALL=en_US.UTF8 svn info % | grep -e "Last\ Changed\ Rev:\ " | sed -e "s/Last\ Changed\ Rev:\ //" > '
+				\ . s:revision
+	silent execute ':e ' . s:revision
+	let l:revision = getline(".")
+	" todo : 判定は0でよいのか？
+	if l:revision == 0
+		echo 'can not get revision number'
+		let l:revision=-1
+	endif
+	silent execute ':bd'
+	return l:revision
+endfunction
+
+function! SvnDiff_MakePatchLastUpdate(patch_target, patch_file_name)
+	let l:revision = SvnDiff_GetRevision()
+	let l:revision -= -1
+    silent execute 
+        \ '!svn diff -r'
+		\ . l:revision . ' '
+		\ . a:patch_target .  ' > ' .  a:patch_file_name
 endfunction
 
 "type == 0:target is Modified file in $VIM/patch_list.tmp
@@ -47,13 +71,16 @@ function! SvnDiff_ShowDiff(type)
         return
     endif
 
-    call    SvnDiff_MakePatch(l:patch_target, s:patch)
+	if a:type == 2
+		call SvnDiff_MakePatchLastUpdate(l:patch_target, s:patch)
+	else
+		call SvnDiff_MakePatch(l:patch_target, s:patch)
+	endif
 
     if getfsize(s:patch) == 0
         echo "Not patch"
     endif
 
-    silent execute ":set columns=165"
     silent execute ":e " . l:patch_target
     silent execute ":vert diffpatch " . s:patch
     silent execute "normal \<c-w>\<c-l>"

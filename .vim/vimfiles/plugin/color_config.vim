@@ -1,6 +1,6 @@
 " Enable syntax highlighting
 " F‚Ã‚¯‚ğƒIƒ“
-syntax on
+" syntax on
 
 let s:is_cygwin = has('win32unix')
 

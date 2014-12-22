@@ -89,10 +89,17 @@ function blm_function()
 	svn blame -v -r {"$start_date"}:HEAD $1
 }
 
-function blm_function()
+function conf_bk_function()
 {
-	local start_date=`date +"%Y-%m-%d" --date "2 weeks ago"`
-	svn blame -v -r {"$start_date"}:HEAD $1
+	local base_dir=`pwd`
+	cd
+	local today=`date +"%Y%m%d_%H%M%S"`
+	local tar_name=`echo "configration."$today"bk.tar"`
+
+	tar -cvf $tar_name .bash_profile .bashrc .gvimrc .kimenv .kimrc .vim .vimrc 1> /dev/null
+	gzip $tar_name
+	mv -f $tar_name".gz" $TRASH_DIR
+	cd $base_dir
 }
 
 alias vim=vim_function
@@ -102,3 +109,4 @@ alias bk=bk_function
 alias oe=oe_function
 alias gvim=gvim_function
 alias blm=blm_function
+alias conf_bk=conf_bk_function
