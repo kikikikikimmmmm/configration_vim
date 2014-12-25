@@ -14,6 +14,7 @@ vmap <silent>		<C-p> "0p<CR>
 " 日時挿入
 nmap date			<ESC>a<C-R>=strftime("%Y.%m.%d")<CR><ESC>
 nmap time			<ESC>a<C-R>=strftime("%H.%M.%S")<CR><ESC>
+" 記載されているファイルを開く
 nmap gv				:vertical wincmd f<CR>
 
 " window control とりあえず
@@ -46,7 +47,7 @@ nmap <S-C>			:cd ..<CR>:pwd<CR>
 nmap #p				oprintf("%s %d\n", __FILE__, __LINE__);
 nmap #d				:.s/\/\*//:.s/\*\///
 
-" 記載されているファイルを開く
+" 同じ名前のヘッダファイルを開く todo:ただ対応する.hファイルを開くだけでよい？
 nmap <F2>			:<C-u>hide edit %<.h<CR>
 " diffのショートカット
 nmap <F5>			:difft<CR><C-w>w:difft<CR><C-w>w
