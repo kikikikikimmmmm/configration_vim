@@ -65,7 +65,7 @@ nmap <Leader>rev	:let rev=SvnDiff_GetRevision()<CR>:redraw!<CR>:echo rev<CR>
 nmap <F9>			:call SvnAnnotate_ShowResult(expand("%"))<CR>
 nmap <F10>			:call SvnLog_ShowResult(expand("%"))<CR>
 " start up explorer
-nmap <F12>			:silent ! explorer.exe `cygpath -wa %:h`<CR>
+nmap <F12>			:silent ! explorer.exe `cygpath -wa %:h`<CR>:redraw!<CR>
 
 " sub mode
 "	call submode#enter_win('winsize', 'n', '<C-l>', '<C-w>>')

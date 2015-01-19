@@ -31,3 +31,5 @@ function! s:GetHighlight(hi)
 	let hl = substitute(hl, 'xxx', '', '')
 	return hl
 endfunction
+
+set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&euc).']['.&ff.']'}%=%l,%c%V%8P
