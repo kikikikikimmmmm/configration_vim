@@ -32,4 +32,4 @@ function! s:GetHighlight(hi)
 	return hl
 endfunction
 
-set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&euc).']['.&ff.']'}%=%l,%c%V%8P
+set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
