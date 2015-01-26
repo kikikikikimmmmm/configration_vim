@@ -20,7 +20,8 @@ set smartcase
 " 削除できるようにする。
 set backspace=indent,eol,start
 set fileformats=unix,dos
-set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
+" set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
+set fileencodings=cp932,sjis,euc-jp,utf-8,iso-2022-jp
 " オートインデント
 set autoindent
 " 移動コマンドを使ったとき、行頭に移動しない
