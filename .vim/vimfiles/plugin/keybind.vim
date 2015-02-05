@@ -33,6 +33,8 @@ imap <C-h>			<Left>
 imap <C-j>			<Down>
 imap <C-k>			<Up>
 imap <C-l>			<Right>
+" 入力補完 NulがC-Spaceの意味であるためこのようにする
+imap <Nul>			<C-p>
 
 " バッファの新規作成
 nmap <C-w>v			:vnew<CR>

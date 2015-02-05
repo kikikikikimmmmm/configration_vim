@@ -26,12 +26,13 @@ function! SvnDiff_MakePatch(patch_target, patch_file_name)
         \ '!svn diff ' .  a:patch_target .  ' > ' .  a:patch_file_name
 endfunction
 
+" ç≈êVÇÃÉäÉrÉWÉáÉìî‘çÜÇéÊìæÇ∑ÇÈ
 function! SvnDiff_GetRevision()
 	silent execute '!LC_ALL=en_US.UTF8 svn info % | grep -e "Last\ Changed\ Rev:\ " | sed -e "s/Last\ Changed\ Rev:\ //" > '
 				\ . s:revision
 	silent execute ':e ' . s:revision
 	let l:revision = getline(".")
-	" todo : $BH=Dj$O(B0$B$G$h$$$N$+!)(B
+	" todo : îªíËÇÕ0Ç≈ÇÊÇ¢ÇÃÇ©ÅH
 	if l:revision == 0
 		echo 'can not get revision number'
 		let l:revision=-1
