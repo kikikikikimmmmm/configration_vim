@@ -12,8 +12,8 @@ nmap <Space>.		:<C-u>edit $MYVIMRC<CR>
 vmap <silent>		<C-p> "0p<CR>
 
 " “ú‘}“ü
-nmap date			<ESC>a<C-R>=strftime("%Y.%m.%d")<CR><ESC>
-nmap time			<ESC>a<C-R>=strftime("%H.%M.%S")<CR><ESC>
+nmap date			<ESC>a<C-R>=strftime("%Y/%m/%d")<CR><ESC>
+nmap time			<ESC>a<C-R>=strftime("%H:%M:%S")<CR><ESC>
 " ‹LÚ‚³‚ê‚Ä‚¢‚éƒtƒ@ƒCƒ‹‚ğŠJ‚­
 nmap gv				:vertical wincmd f<CR>
 
@@ -60,14 +60,17 @@ nmap <F6>			:call SvnDiff_ShowList()<CR>
 nmap <F7>			:call SvnDiff_ShowDiff(0)<CR>
 nmap <C-F7>			:call SvnDiff_ShowDiff(1)<CR>
 nmap <S-F7>			:call SvnDiff_ShowDiff(2)<CR>
-" get revision(•`‰æ‚ª‚¨‚©‚µ‚­‚È‚é‚½‚ßÄ•`‰æ‚·‚é)
-nmap <Leader>rev	:let rev=SvnDiff_GetRevision()<CR>:redraw!<CR>:echo rev<CR>
-
+" vimgrep
+nmap <F8>			:call GetVimgrepList()<CR>
+nmap <S-F8>			:call ClearHighlightKeyword()<CR>
 " svn annotate
 nmap <F9>			:call SvnAnnotate_ShowResult(expand("%"))<CR>
 nmap <F10>			:call SvnLog_ShowResult(expand("%"))<CR>
 " start up explorer
 nmap <F12>			:silent ! explorer.exe `cygpath -wa %:h`<CR>:redraw!<CR>
+
+" get revision(•`‰æ‚ª‚¨‚©‚µ‚­‚È‚é‚½‚ßÄ•`‰æ‚·‚é)
+nmap <Leader>rev	:let rev=SvnDiff_GetRevision()<CR>:redraw!<CR>:echo rev<CR>
 
 " sub mode
 "	call submode#enter_win('winsize', 'n', '<C-l>', '<C-w>>')
