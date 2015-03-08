@@ -2,32 +2,29 @@ autocmd BufRead,BufNewFile,TextChangedI *.csv call SetSyntax_CSV()
 
 function! SetSyntax_CSV()
 	syntax match csvComment /^;.*$/
-	hi csvComment ctermfg=blue
+	highlight default link csvComment Comment
 
 	"For target_func_list.csv
-	syntax match csvComment /^;.*$/
-	hi csvComment ctermfg=Blue
-
 	syntax match TrunkModified /^.*#trunk_modified_[0-9]*.*$/
-	hi TrunkModified ctermfg=DarkYellow
+	highlight default link TrunkModified Constant
 
 	syntax match UtFixing /^.*ut\sfixing.*$/
 	hi UtFixing ctermfg=Magenta
+	highlight default link UtFixing PreProc
 
 	syntax match Refactoring /^;.*#now_refactoring#.*$/
-	hi Refactoring ctermfg=DarkCyan
+	highlight default link Refactoring Special
 
 	syntax match Suspended /^;.*#suspended#.*$/
-	hi Suspended ctermfg=Red
+	highlight default link Suspended WarningMsg
 
 	syntax match Refactored /^;.*refactored\sfunction.*$/
-	hi Refactored ctermfg=DarkGray
-
+	highlight default link Refactored LineNr
 
 	"For WinAMS Test CSV
 	syntax match TestCSVHeader /^mod,.*/
-	hi TestCSVHeader ctermfg=Red
+	highlight default link TestCSVHeader NonText
 
 	syntax match TestCSVIO /^#COMMENT,.*/
-	hi TestCSVIO ctermfg=Yellow
+	highlight default link TestCSVIO Comment
 endfunction
