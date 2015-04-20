@@ -19,6 +19,7 @@ if s:is_cygwin
 endif
 
 " arrange color
-autocmd ColorScheme * highlight Visual ctermbg=24
+autocmd ColorScheme * highlight Visual ctermbg=136
+autocmd ColorScheme * highlight Search ctermbg=167
 colorscheme molokai
 
