@@ -41,12 +41,8 @@ set t_vb=
 set mouse=a
 " コマンドラインの高さを2行に
 set cmdheight=2
-" 行番号を表示
-set number
 " キーコードはすぐにタイムアウト。マッピングはタイムアウトしない
 set notimeout ttimeout ttimeoutlen=200
-" <F11>キーで'paste'と'nopaste'を切り替える
-set pastetoggle=<F11>
 " ヤンクでクリップボードコピー
 set clipboard+=unnamed
 " set clipboard+=autoselect
