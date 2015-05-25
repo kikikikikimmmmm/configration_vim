@@ -107,6 +107,11 @@ function get_revision()
 	LC_ALL=en_US.UTF8 svn info $* | grep -e "Last\ Changed\ Rev:\ " | sed -e "s/Last\ Changed\ Rev:\ //"
 }
 
+function get_uncontrolled_list()
+{
+	svn status $* | grep -ve '^?'
+}
+
 alias vim=vim_function
 alias gvim=gvim_function
 alias poi=poi_function
@@ -116,3 +121,4 @@ alias gvim=gvim_function
 alias blm=blm_function
 alias conf_bk=conf_bk_function
 alias rev=get_revision
+alias list=get_uncontrolled_list
