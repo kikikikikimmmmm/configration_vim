@@ -104,8 +104,8 @@ function! s:InitNeoBundle()
 		try
 			call neobundle#begin(expand('~/.vim/bundle/'))
 			NeoBundleFetch 'Shougo/neobundle.vim'
-			call neobundle#end()
 			call s:LoadBundles()
+			call neobundle#end()
 		catch
 			call s:WithoutBundles()
 		endtry 
