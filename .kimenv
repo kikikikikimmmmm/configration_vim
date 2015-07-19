@@ -15,7 +15,7 @@ if [ -z $VIM ]; then
 	export VIMRUNTIME=$VIM/vim74
 fi
 
-export HISTORY=1000
+export HISTSIZE=10000
 export TOOLS=$HOME/$OWNER/tools
 export TRASH_DIR=$HOME/$OWNER/tmp/trash
 export APP_DIR=$HOME
