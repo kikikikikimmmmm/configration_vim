@@ -8,35 +8,38 @@ fi
 #################
 #	alias		#
 #################
-alias rm="rm -i"
-alias cp="cp -i"
-alias mv="mv -i"
-alias ls="ls -hF --color=tty"
-alias la="ls -la"
-alias grep="grep --color=auto"
-alias dfh="df -h"
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias ls='ls -hF --color=tty'
+alias la='ls -la'
+alias grep='grep --color=auto'
+alias dfh='df -h'
 alias more="less '-E -P?f--More-- (%pb\%):--More--.'"
-alias p="pwd"
-alias e="env"
-alias vi="vim"
+alias p='pwd'
+alias e='env'
+alias vi='vim'
+alias today="date +%Y%m%d"
 
-alias pc="cygpath.exe"
-alias st="cygstart.exe"
+alias pc='cygpath.exe'
+alias st='cygstart.exe'
 
-alias ctags="ctags -f .tags"
-alias rsm="rsm -C -c"
+alias ctags='ctags -f .tags'
+alias rsm='rsm -C -c'
 
 # alias clr="svn status | grep ^? | grep -v "qac" | grep -v "MyUnderstandProject" | cgrep -v ".tags" | ccut -c9- | xargs rm -rf"
 alias clr="svn status | grep ^? | grep -v \"qac\|MyUnderstandProject\|.tags\" | cut -c9- | xargs rm -rf"
 alias repo="svn info $HOME | grep -e \"^リポジトリのルート：\" | cut -c21-"
 
 alias sfind="find $APP_DIR \( -name "*.c" -o -name "*.h" \) -type f -print;"
+alias pwdd='cygpath -w $(pwd)'
 
 #################
 #	function	#
 #################
 function vim_function()
 {
+	# cygwinからのvim起動で設定ファイルを読み込むため変換
 	local VIM=`cygpath $VIM`
 	local VIMRUNTIME=`cygpath $VIMRUNTIME`
 	/bin/vim $*
@@ -98,9 +101,10 @@ function conf_bk_function()
 
 	tar -cvf $tar_name .bash_profile .bashrc .gvimrc .kimenv .kimrc .vim .vimrc 1> /dev/null
 	gzip $tar_name
-	mv -f $tar_name".gz" $TRASH_DIR
+	mv -f $tar_name'.gz' $TRASH_DIR
 	cd $base_dir
 }
+
 
 function get_revision()
 {

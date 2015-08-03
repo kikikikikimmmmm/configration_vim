@@ -1,3 +1,14 @@
+" vimの外部コマンドとしてgvimを起動する場合
+" 設定ファイルを読み込むためにここで変換する必要がある
+" todo: もう少しスマートにできないか？
+let $VIM='C:/cygwin/home/Administrator/.vim'
+let $VIMRUNTIME=$VIM . '/vim74'
+
+set shell=c:/cygwin/bin/bash
+set shellpipe=2>
+set shellcmdflag=-c
+set shellslash
+
 " Vi互換モードをオフ（Vimの拡張機能を有効）
 set nocompatible
 " バッファを保存しなくても他のバッファを表示できるようにする

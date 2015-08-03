@@ -14,10 +14,6 @@ set tabstop=4
 set guifont=ÇlÇr_ÉSÉVÉbÉN:h8:cSHIFTJIS
 
 "coler reverse
-"let g:bg_coler='darkgreen'
-"ighlight Normal guibg='darkgreen' guifg='white'
-
-"coler reverse
 let g:bg_coler='black'
 highlight Normal guibg='black' guifg='white'
 function! Reverse_Coler()
@@ -35,6 +31,6 @@ endfunction
 set visualbell
 set t_vb=
 set browsedir=buffer
-set shellslash
+" set shellslash
 
 colorscheme bensday

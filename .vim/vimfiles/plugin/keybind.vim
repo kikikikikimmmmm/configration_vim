@@ -18,10 +18,21 @@ nmap time			<ESC>a<C-R>=strftime("%H:%M:%S")<CR><ESC>
 nmap gv				:vertical wincmd f<CR>
 
 " window control とりあえず
-nmap <C-k>			<C-W>+
-nmap <C-j>			<C-W>-
-nmap <C-l>			<C-W>>
-nmap <C-h>			<C-W><
+" nmap <C-k>			<C-W>+
+" nmap <C-j>			<C-W>-
+" nmap <C-l>			<C-W>>
+" nmap <C-h>			<C-W><
+nmap ;			4<C-W>+
+nmap -			4<C-W>-
+noremap L		<C-L>
+nmap )			<C-W>>
+nmap (			<C-W><
+nmap <C-k>		<C-W>k
+nmap <C-j>		<C-W>j
+nmap <C-l>		<C-W>l
+nmap <C-h>		<C-W>h
+nmap <C-Q>		:let @q=expand('%')<CR>
+nmap =			<C-W>=
 " バッファ移動
 nmap <C-n>			:bp<CR>
 nmap <C-p>			:bn<CR>
@@ -36,9 +47,8 @@ imap <C-l>			<Right>
 " 入力補完 NulがC-Spaceの意味であるためこのようにする
 imap <Nul>			<C-p>
 
-" バッファの新規作成
-nmap <C-w>v			:vnew<CR>
-nmap <C-w>s			<C-w>n<CR>
+" タグ複数時はリストを表示する
+nmap <C-]>			g<C-]>
 
 " source tree
 nmap <Leader>tl		:Tlist<CR>

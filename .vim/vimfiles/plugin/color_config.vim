@@ -19,7 +19,12 @@ if s:is_cygwin
 endif
 
 " arrange color
-autocmd ColorScheme * highlight Visual ctermbg=136
-autocmd ColorScheme * highlight Search ctermbg=167
+autocmd ColorScheme * highlight Visual		ctermbg=136			guibg=#F8DC85
+autocmd ColorScheme * highlight Search		ctermbg=167			gui=bold guifg=#A6E22E guibg=#455354
+autocmd ColorScheme * highlight DiffAdd		guibg=#164082
+autocmd ColorScheme * highlight DiffChange	guibg=aquamarine4
+autocmd ColorScheme * highlight DiffDelete	gui=bold			guifg=DarkYellow guibg=#164082
+autocmd ColorScheme * highlight DiffText 	gui=bold			guibg=firebrick3
+
 colorscheme molokai
 

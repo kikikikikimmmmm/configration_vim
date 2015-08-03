@@ -20,6 +20,7 @@ export TOOLS=$HOME/$OWNER/tools
 export TRASH_DIR=$HOME/$OWNER/tmp/trash
 export APP_DIR=$HOME
 export LESSCHARSET=dos
+export SVN_EDITOR=gvim
 
 export LS_COLORS="\
 no=00:fi=00:di=04;37:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:\
