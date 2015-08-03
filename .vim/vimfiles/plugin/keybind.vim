@@ -4,6 +4,8 @@ map Y y$
 nnoremap x "_x
 " 検索後の強調表示を解除する
 nmap <Esc><Esc>		:nohl<CR><Esc>
+" 検索した箇所から移動したくない
+nmap * *N
 " 行を折り返し表示しない
 nmap <Leader>w		:set wrap!<CR>
 " .vimrcを開く
