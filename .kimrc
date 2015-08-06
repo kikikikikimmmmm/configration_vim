@@ -39,7 +39,8 @@ alias pwdd='cygpath -w $(pwd)'
 #################
 function vim_function()
 {
-	# cygwinからのvim起動で設定ファイルを読み込むため変換
+	# WindowsのgvimのためWindwosの環境変数にVIM、VIMRUNTIMEを設定している。
+	# cygwinからのvim起動で設定ファイルを読み込むためにはここで変換をする必要がある。
 	local VIM=`cygpath $VIM`
 	local VIMRUNTIME=`cygpath $VIMRUNTIME`
 	/bin/vim $*
