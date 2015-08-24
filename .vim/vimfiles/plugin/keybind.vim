@@ -5,7 +5,7 @@ nnoremap x "_x
 " 検索後の強調表示を解除する
 nmap <Esc><Esc>		:nohl<CR><Esc>
 " 検索した箇所から移動したくない
-nmap * *N
+" nmap * *N
 " 行を折り返し表示しない
 nmap <Leader>w		:set wrap!<CR>
 " .vimrcを開く
@@ -46,8 +46,7 @@ imap <C-h>			<Left>
 imap <C-j>			<Down>
 imap <C-k>			<Up>
 imap <C-l>			<Right>
-" 入力補完 NulがC-Spaceの意味であるためこのようにする
-imap <Nul>			<C-p>
+imap <C-Space>		<C-p>
 
 " タグ複数時はリストを表示する
 nmap <C-]>			g<C-]>

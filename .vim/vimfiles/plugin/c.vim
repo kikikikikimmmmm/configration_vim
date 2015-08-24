@@ -10,6 +10,7 @@ function! SetSyntax_C()
 	syn keyword cConstant	MIN MAX OK NG ERROR OFF ON
 endfunction
 
+" snippet
 function! InsertFuncHeader()
 	exec "a"
 /***************************************************************************

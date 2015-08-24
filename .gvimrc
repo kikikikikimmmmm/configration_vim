@@ -1,7 +1,7 @@
 " vim‚ÌConfig‚ðread
 
-set lines=45
-set columns=130
+set lines=50
+set columns=180
 
 "XIM setup
 set guifontset=-misc-fixed-medium-r-normal--13-*
