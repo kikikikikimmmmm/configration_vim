@@ -30,6 +30,7 @@ alias rsm='rsm -C -c'
 # alias clr="svn status | grep ^? | grep -v "qac" | grep -v "MyUnderstandProject" | cgrep -v ".tags" | ccut -c9- | xargs rm -rf"
 alias clr="svn status | grep ^? | grep -v \"qac\|MyUnderstandProject\|.tags\" | cut -c9- | xargs rm -rf"
 alias repo="svn info $HOME | grep -e \"^リポジトリのルート：\" | cut -c21-"
+# alias tsvn='/cygdrive/c/Program\ Files/TortoiseSVN/bin/svn.exe'
 
 alias sfind="find $APP_DIR \( -name "*.c" -o -name "*.h" \) -type f -print;"
 alias pwdd='cygpath -w $(pwd)'
