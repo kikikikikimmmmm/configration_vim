@@ -1,0 +1,16 @@
+.vim/bundle/
+.bash_history
+.gem/
+.gitconfig
+.inputrc
+.minttyrc
+.profile
+.ssh/
+.subversion/
+.tags
+.vim/.netrwhist
+.vim/vim_grep.tmp
+.vim_ino/
+.viminfo
+bin/
+kimura/
