@@ -20,9 +20,9 @@ alias p='pwd'
 alias e='env'
 alias vi='vim'
 alias today="date +%Y%m%d"
+alias hist='history'
 
-alias pc='cygpath.exe'
-alias st='cygstart.exe'
+alias win='cygstart.exe'
 
 alias ctags='ctags -f .tags'
 alias rsm='rsm -C -c'
@@ -79,15 +79,6 @@ function bk_function()
 	fi
 }
 
-function oe_function()
-{
-	if [ $# -gt 0 ]; then
-		explorer.exe `cygpath -wa $1`
-	else
-		explorer.exe
-	fi
-}
-
 function blm_function()
 {
 	local start_date=`date +"%Y-%m-%d" --date "2 weeks ago"`
@@ -122,7 +113,6 @@ alias vim=vim_function
 alias gvim=gvim_function
 alias poi=poi_function
 alias bk=bk_function
-alias oe=oe_function
 alias gvim=gvim_function
 alias blm=blm_function
 alias conf_bk=conf_bk_function
