@@ -34,7 +34,7 @@ if [ -f "${HOME}/.kimrc" ] ; then
 fi
 
 # 環境変数のaddだけは１回だけにするためここ
-export PATH=$PATH:$TOOLS:/cygdrive/c/tools/MSquared/M2\ RSM
+export PATH=$PATH:$TOOLS:/cygdrive/c/tools/MSquared/M2\ RSM:/cygdrive/c/tools/ccfx\-win32\-en/bi:/cygdrive/c/tools/xdocdiff113/command
 
 # コマンドライン操作をviライクにする
 set -o vi
