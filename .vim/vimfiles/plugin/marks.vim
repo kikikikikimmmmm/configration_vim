@@ -33,6 +33,6 @@ nnoremap [Mark]l :<C-u>marks<CR>
 " autocmd MyAutoCmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line('$') | exe 'normal g`"' | endif
 
 " バッファ読み込み時にマークを初期化
-autocmd MyAutoCmd BufReadPost * delmarks!
+autocmd BufReadPost * delmarks!
 
 " }}}
