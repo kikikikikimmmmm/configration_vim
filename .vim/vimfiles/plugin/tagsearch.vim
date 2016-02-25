@@ -2,21 +2,21 @@ let s:search_result="~/.vim/vim_grep.tmp"
 let s:search_base_dir="."
 
 function! TagSearch(search_type)
-	let l:search_tag=s:PrevWord()
+	let l:search_tag=PrevWord()
 	if a:search_type=='0'
 		execute '!grep -RnH '
 			\ '--include ''*.[chCH]'' --include ''*.cpp'' '
-			\ '--include ''*.cc'' --include ''*.rb'' '''
+			\ '--include ''*.cc'' --include ''*.rb'' ''\<'
 			\ . l:search_tag
-			\ . ''' '
+			\ . '\>'' '
 			\ . s:search_base_dir
 			\ . ' | sed ''s/:\\([1-9][0-9]*\\):/|\\1| /g'' > '
 			\ . s:search_result
 	elseif a:search_type=='1'
 		execute '!grep -RnH '
-			\ '--exlude-dir=''.svn'' --exclude=''.*'' -exclude=''tags'' '''
+			\ '--exlude-dir=''.svn'' --exclude=''.*'' -exclude=''tags'' ''\<'
 			\ . l:search_tag
-			\ . ''' '
+			\ . '\>'' '
 			\ . s:search_base_dir
 			\ . ' | sed ''s/:\\([1-9][0-9]*\\):/|\\1| /g'' > ' 
 			\ . s:search_result
@@ -43,7 +43,7 @@ function! GetTagSearchBaseDir()
 	endif
 endfunction
 
-function! s:PrevWord()
+function! PrevWord()
 	let line=getline(".")
 	if line[col(".") - 1] =~ '\w'
 		return expand("<cword>")
