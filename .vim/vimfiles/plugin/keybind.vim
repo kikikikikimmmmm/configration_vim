@@ -72,7 +72,8 @@ nmap <F7>			:call SvnDiff_ShowDiff(0)<CR>
 nmap <C-F7>			:call SvnDiff_ShowDiff(1)<CR>
 nmap <S-F7>			:call SvnDiff_ShowDiff(2)<CR>
 " vimgrep
-nmap <F8>			:call TagSearch(0)<CR>:cw<CR>
+nmap <F8>			mA:let key="/\\<" . PrevWord() . "\\>"<CR>:call TagSearch(0)<CR>:cw<CR>:silent execute key<CR><C-w>k'Ahn
+nmap <S-F8>			'A
 " svn annotate
 nmap <F9>			:call SvnAnnotate_ShowResult(expand("%"))<CR>
 nmap <F10>			:call SvnLog_ShowResult(expand("%"))<CR>
