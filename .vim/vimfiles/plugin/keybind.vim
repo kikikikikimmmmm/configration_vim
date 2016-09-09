@@ -72,11 +72,19 @@ nmap <F7>			:call SvnDiff_ShowDiff(0)<CR>
 nmap <C-F7>			:call SvnDiff_ShowDiff(1)<CR>
 nmap <S-F7>			:call SvnDiff_ShowDiff(2)<CR>
 " vimgrep
-nmap <F8>			mA:let key="/\\<" . PrevWord() . "\\>"<CR>:call TagSearch(0)<CR>:cw<CR>:silent execute key<CR><C-w>k'Ahn
-nmap <S-F8>			'A
+let g:search_tag=""
+nmap <F8>			:let g:search_tag = GetTargetTag(0)<CR>
+nmap <C-F8>			:let g:search_tag = GetTargetTag(1)<CR>
+nmap <S-F8>			:let g:search_tag = GetTargetTag(2)<CR>
+nmap <M-F8>			:call GetTagSearchBaseDir()<CR>
+nmap <F9>			:mA:ccl<CR>:call TagSearch(0, "\\<" . g:search_tag . "\\>")<CR>:cw<CR>:silent execute "/\\<" . g:search_tag . "\\>"<CR><C-w>p'Ahn
+nmap <S-F9>			:mA:ccl<CR>:call TagSearch(0, g:search_tag)<CR>:cw<CR>:silent execute "/" . g:search_tag<CR><C-w>p'Ahn
+nmap <C-F9>			:mA:ccl<CR>:call TagSearch(1, "\\<" . g:search_tag . "\\>")<CR>:cw<CR>:silent execute "/\\<" . g:search_tag . "\\>"<CR><C-w>p'Ahn
+nmap <C-S-F9>		:mA:ccl<CR>:call TagSearch(1, g:search_tag)<CR>:cw<CR>:silent execute "/" . g:search_tag<CR><C-w>p'Ahn
+nmap <M-F9>			'A
 " svn annotate
-nmap <F9>			:call SvnAnnotate_ShowResult(expand("%"))<CR>
-nmap <F10>			:call SvnLog_ShowResult(expand("%"))<CR>
+nmap <F10>			:call SvnAnnotate_ShowResult(expand("%"))<CR>
+nmap <C-F10>		:call SvnLog_ShowResult(expand("%"))<CR>
 " start up explorer
 nmap <F12>			:silent !explorer.exe `cygpath -wa %:h`<CR>:redraw!<CR>
 

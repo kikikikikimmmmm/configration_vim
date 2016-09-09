@@ -110,7 +110,7 @@ function! s:InitNeoBundle()
 	if isdirectory(expand("~/.vim/bundle/neobundle.vim/"))
 		filetype plugin indent off
 		if has('vim_starting')
-			set runtimepath+=~/.vim/bundle/neobundle.vim/
+			set runtimepath+='~/.vim/bundle/neobundle.vim/'
 		endif
 		try
 			call neobundle#begin(expand('~/.vim/bundle/'))
