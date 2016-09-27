@@ -80,6 +80,8 @@ set tabstop=4
 " コマンドラインの履歴保存数
 set history=10000
 
+set isfname=\ ,@,48-57,/,\\,.,-,_,+,,,#,$,%,{,},[,],:,@-@,!,~,=
+
 "------------------------------------------------------------
 " NeoBundle
 "------------------------------------------------------------
@@ -110,7 +112,8 @@ function! s:InitNeoBundle()
 	if isdirectory(expand("~/.vim/bundle/neobundle.vim/"))
 		filetype plugin indent off
 		if has('vim_starting')
-			set runtimepath+='~/.vim/bundle/neobundle.vim/'
+			" set runtimepath+=C:/cygwin/home/Administrator/.vim/bundle/neobundle.vim
+			set runtimepath+=~/.vim/bundle/neobundle.vim
 		endif
 		try
 			call neobundle#begin(expand('~/.vim/bundle/'))

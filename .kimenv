@@ -16,7 +16,7 @@ fi
 export HISTSIZE=10000
 export HISTCONTROL=ignoreboth
 export HISTIGNORE="fg*:bg*:cd*"
-export HISTTIMEFORMAT='%m/%d %T'
+export HISTTIMEFORMAT='%m/%d %T '
 
 export TOOLS=$HOME/$OWNER/tools
 export TRASH_DIR=$HOME/$OWNER/tmp/trash

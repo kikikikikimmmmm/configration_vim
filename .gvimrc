@@ -11,7 +11,7 @@ set imsearch=0
 set tabstop=4
 
 "set guifont=‚l‚r_ƒSƒVƒbƒN:h10:cSHIFTJIS
-set guifont=‚l‚r_ƒSƒVƒbƒN:h8:cSHIFTJIS
+set guifont=MS_Gothic:h8:cSHIFTJIS
 
 "coler reverse
 let g:bg_coler='black'
