@@ -15,7 +15,7 @@ fi
 
 export HISTSIZE=10000
 export HISTCONTROL=ignoreboth
-export HISTIGNORE="fg*:bg*:cd*"
+export HISTIGNORE="fg*:bg*"
 export HISTTIMEFORMAT='%m/%d %T '
 
 export TOOLS=$HOME/$OWNER/tools

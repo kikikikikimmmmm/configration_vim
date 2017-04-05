@@ -1,8 +1,8 @@
 " マーク設定 : {{{
 
 " 基本マップ
-nnoremap [Mark] <Nop>
-nmap <S-m> [Mark]
+" nnoremap [Mark] <Nop>
+" nmap <S-m> [Mark]
 
 " 現在位置をマーク
 if !exists('g:markrement_char')
@@ -23,11 +23,11 @@ function! s:AutoMarkrement()
 endfunction
 
 " 次/前のマーク
-nnoremap [Mark]n ]`
-nnoremap [Mark]p [`
+"nnoremap [Mark]n ]`
+"nnoremap [Mark]p [`
 
 " 一覧表示
-nnoremap [Mark]l :<C-u>marks<CR>
+"nnoremap [Mark]l :<C-u>marks<CR>
 
 " 前回終了位置に移動
 " autocmd MyAutoCmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line('$') | exe 'normal g`"' | endif

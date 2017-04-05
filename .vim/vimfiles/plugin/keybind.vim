@@ -13,6 +13,15 @@ nmap <Space>.		:<C-u>edit $MYVIMRC<CR>
 " 連続貼り付け
 vmap <silent>		<C-p> "0p<CR>
 
+nnoremap [Mark] <Nop>
+nmap <S-m> [Mark]
+nnoremap <silent>[Mark]m :call AutoMarkrement()<CR>
+" 次/前のマーク
+nnoremap [Mark]n :echo<CR>]`
+nnoremap [Mark]p :echo<CR>[`
+" 一覧表示
+nnoremap [Mark]l :marks<CR>
+
 " 日時挿入
 nmap date			<ESC>a<C-R>=strftime("%Y/%m/%d")<CR><ESC>
 nmap time			<ESC>a<C-R>=strftime("%H:%M:%S")<CR><ESC>
@@ -29,11 +38,12 @@ nmap -			4<C-W>-
 noremap L		<C-L>
 nmap )			<C-W>>
 nmap (			<C-W><
-nmap <C-k>		<C-W>k
-nmap <C-j>		<C-W>j
-nmap <C-l>		<C-W>l
-nmap <C-h>		<C-W>h
-nmap <C-Q>		:let @q=expand('%')<CR>
+nmap <c-k>		<C-W>k
+nmap <c-j>		<C-W>j
+nmap <c-l>		<C-W>l
+nmap <c-h>		<C-W>h
+nmap <c-q>		:let @q=expand('%:t')<CR>
+nmap <s-q>		:let @q=expand('%:p')<CR>
 nmap =			<C-W>=
 " バッファ移動
 nmap <C-n>			:bp<CR>
