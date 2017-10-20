@@ -67,8 +67,11 @@ nmap <C-C>			:cd %:h<CR>:pwd<CR>
 nmap <S-C>			:cd ..<CR>:pwd<CR>
 
 " Cデバッグ用
-nmap #p				oprintf("%s %d\n", __FILE__, __LINE__);
+nmap #p				oprintf("FILE[%s] LINE[%d]\n", __FILE__, __LINE__);
 nmap #d				:.s/\/\*//:.s/\*\///
+
+cmap <tab>			<Up>
+cmap <S-tab>		<Down>
 
 " 同じ名前のヘッダファイルを開く todo:ただ対応する.hファイルを開くだけでよい？
 nmap <F2>			:<C-u>hide edit %<.h<CR>

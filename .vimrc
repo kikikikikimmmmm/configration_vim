@@ -1,10 +1,10 @@
 " vimの外部コマンドとしてgvimを起動する場合
 " 設定ファイルを読み込むためにここで変換する必要がある
 " todo: もう少しスマートにできないか？
-let $VIM='C:/cygwin/home/Administrator/.vim'
+let $VIM='C:/cygwin64/home/kimura6/.vim'
 let $VIMRUNTIME=$VIM . '/vim74'
 
-set shell=c:/cygwin/bin/bash
+set shell=c:/cygwin64/bin/bash
 set shellpipe=2>
 set shellcmdflag=-c
 set shellslash
@@ -112,12 +112,12 @@ function! s:InitNeoBundle()
 	if isdirectory(expand("~/.vim/bundle/neobundle.vim/"))
 		filetype plugin indent off
 		if has('vim_starting')
-			" set runtimepath+=C:/cygwin/home/Administrator/.vim/bundle/neobundle.vim
+			" set runtimepath+=C:/cygwin64/home/kimura6/.vim/bundle/neobundle.vim
 			set runtimepath+=~/.vim/bundle/neobundle.vim
 		endif
 		try
-			call neobundle#begin(expand('~/.vim/bundle/'))
 			NeoBundleFetch 'Shougo/neobundle.vim'
+			call neobundle#begin(expand('~/.vim/bundle/'))
 			call s:LoadBundles()
 			call neobundle#end()
 		catch
